@@ -1,0 +1,21 @@
+{
+    "service": {
+        "name": "config-server",
+        "tags": [
+            "config-server",
+            "voice-infra"
+        ],
+        "port": 8080,
+        "check": {
+            "id": "http-check",
+            "name": "HTTP Health Check",
+            "args": [
+              "/bin/sh",
+              "-c",
+              "curl --silent --fail http://127.0.0.1:8080/fpm-ping"
+            ],
+            "interval": "10s",
+            "timeout": "10s"
+          }
+    }
+}

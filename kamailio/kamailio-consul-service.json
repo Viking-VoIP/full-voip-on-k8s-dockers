@@ -1,0 +1,21 @@
+{
+    "service": {
+        "name": "sip-proxy",
+        "tags": [
+            "sip-proxy",
+            "voice-infra"
+        ],
+        "port": 5060,
+        "check": {
+            "id": "sip-health",
+            "name": "SIP Health Check",
+            "args": [
+              "/bin/sh",
+              "-c",
+              "sipsak -s sip:$(wget -q -O - http://169.254.169.254/latest/meta-data/local-ipv4):5060"
+            ],
+            "interval": "10s",
+            "timeout": "2s"
+          }
+    }
+}

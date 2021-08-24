@@ -1,0 +1,3 @@
+0000000000000000000000000000000000000000 ff4701675fb1cacc836e80e49b1144e548b45775 David Villasmil <david.villasmil.work@gmail.com> 1628681887 +0100	clone: from git@github.com:davidcsi/voip-full-k8s-dockers.git
+ff4701675fb1cacc836e80e49b1144e548b45775 a70241b593b3c7704bd05f4f50359ad0c51af1f2 David Villasmil <david.villasmil.work@gmail.com> 1629313405 +0100	commit: Adding config-server docker
+a70241b593b3c7704bd05f4f50359ad0c51af1f2 67b7571d713f15248b63b47bafeba27426dbeaf8 David Villasmil <david.villasmil.work@gmail.com> 1629573090 +0100	commit: Full working version

@@ -1,0 +1,10 @@
+version: '3.5'
+services:
+  sut:
+    image: massphoning-voice-infra-config-server
+    volumes:
+      - "./src:/var/www/html"
+    ports:
+      - "8080:8080"
+
+
