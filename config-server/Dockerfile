@@ -2,8 +2,9 @@ FROM debian:10-slim
 LABEL Maintainer="David Villasmil (david.villasmil.work@gmail.com)" \
       Description="Simple nginx+php server"
 
+RUN echo "deb http://deb.debian.org/debian buster-backports main" >> /etc/apt/sources.list
 # Install packages
-RUN apt-get update && apt-get -y install nginx php php-cli php-fpm procps supervisor curl vim-tiny unzip git
+RUN apt-get update && apt-get -y install nginx php php-cli php-fpm procps supervisor curl vim-tiny unzip git php-xml php-mysql
 
 # Configure nginx
 COPY config/nginx-default.conf /etc/nginx/sites-enabled/default
