@@ -54,11 +54,18 @@ COPY ./consul.hcl /etc/consul.d/consul.hcl
 RUN chmod +x /start_kam.sh
 RUN chmod +x /start_consul_agent.sh
 RUN chown consul:consul /start_consul_agent.sh /etc/consul.d/kamailio-consul-service.json
-
+ 
 EXPOSE 5060/udp
 EXPOSE 5060/tcp
 
 # clean
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 #ENTRYPOINT [ "/start_kam.sh" ]
+#CMD ["/startall.sh"]
 CMD ["/usr/bin/supervisord"]
+#ENTRYPOINT ["/startall.sh"]
+# Build:
+# sudo docker build -t vikingvoip/sip-proxy:latest .
+#
+# Run:
+# sudo docker run -v ${pwd}/conf:/etc/kamailio --network=host -it vikingvoip/sip-proxy:latest .
